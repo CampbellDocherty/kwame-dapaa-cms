@@ -34,3 +34,17 @@ export const Dropzone = styled.div<DragState>`
   outline: none;
   transition: border 0.24s ease-in-out;
 `;
+
+export const ImagesGrid = styled.div`
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`;
+
+export const Image = styled.img`
+  width: 33%;
+  object-fit: cover;
+  object-position: center;
+`;

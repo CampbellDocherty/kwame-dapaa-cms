@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import * as firebaseStorage from 'firebase/storage';
 import { storage } from './firebase';
+import { Image } from './styles';
 
 const Progress = ({ progress }: { progress: number }) => {
   if (progress === 100) {
@@ -30,10 +31,10 @@ const ImageUpload = ({ image }: { image: File }) => {
   const imageUrl = useMemo(() => URL.createObjectURL(image), [image]);
 
   return (
-    <>
-      <img src={imageUrl} alt={image.name} />
-      {progress && <Progress progress={progress} />};
-    </>
+    <div>
+      <Image src={imageUrl} alt={image.name} />
+      {progress && <Progress progress={progress} />}
+    </div>
   );
 };
 

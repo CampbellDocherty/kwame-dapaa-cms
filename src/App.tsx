@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { Dropzone } from './styles';
+import { Dropzone, ImagesGrid } from './styles';
 
 import ImageUpload from './ImageUpload';
 
@@ -30,8 +30,13 @@ const App = () => {
           <p>Drag and drop some files here, or click to select files</p>
         )}
       </Dropzone>
-      {images &&
-        images.map((image) => <ImageUpload key={image.name} image={image} />)}
+      {images && (
+        <ImagesGrid>
+          {images.map((image) => (
+            <ImageUpload key={image.name} image={image} />
+          ))}
+        </ImagesGrid>
+      )}
     </div>
   );
 };
